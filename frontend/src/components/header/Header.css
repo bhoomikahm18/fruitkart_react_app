@@ -26,3 +26,9 @@
     font-size: 18px;
 }
 
+.header-links ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 0px 15px;
+}
