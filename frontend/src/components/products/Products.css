@@ -1,3 +1,7 @@
 .products-container{
     background-color: white;
 }
+
+.sort-button{
+    text-align: center;
+}
