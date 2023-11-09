@@ -23,3 +23,10 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.cart-item-image {
+    width: 100px;
+    height: auto;
+    border: 2px solid black;
+    margin-right: 10px;
+}
