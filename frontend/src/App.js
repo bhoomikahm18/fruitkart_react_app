@@ -13,12 +13,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Header cartItems={cartItems}/>
-      <Routes>
-        <Route exact path="/" element={<Products />}/>
-        <Route exact path="/signup" element={<Signup />}/>
-        <Route exact path="/cart" element={<Cart cartItems={cartItems}/>}/>
-      </Routes>
+        <Header cartItems={cartItems} />
+        <Routes>
+          <Route exact path="/" element={<Products />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/cart" element={<Cart cartItems={cartItems} />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
