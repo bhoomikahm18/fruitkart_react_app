@@ -33,3 +33,7 @@
     max-height: 180px;
     display: block;
 }
+
+.product-name{
+    margin: 10px 0px;
+}
