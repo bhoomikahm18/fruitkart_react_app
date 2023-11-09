@@ -27,13 +27,20 @@
     background-color: white;
 }
 
-.product-image{
+.product-image {
     width: 100%;
     max-width: 286px;
     max-height: 180px;
     display: block;
 }
 
-.product-name{
+.product-name {
     margin: 10px 0px;
+}
+
+.product-price {
+    margin: 10px 0px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 30px;
 }
