@@ -27,6 +27,25 @@ function App() {
     }
   }
 
+  function handleRemoveProduct(product) {
+    const productExist = cartItems.find(item => {
+      return item.id === product.id;
+    });
+
+    if (productExist.quantity === 1) {
+      setCartItems(cartItems.filter(item => {
+        return item.id !== product.id;
+      }));
+    }
+    else {
+      setCartItems(cartItems.map(item => {
+        return item.id === product.id ?
+          { ...productExist, quantity: productExist.quantity - 1 } :
+          item
+      }))
+    }
+  }
+
   return (
     <div>
       <BrowserRouter>
