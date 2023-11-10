@@ -10,6 +10,23 @@ function App() {
 
   const [cartItems, setCartItems] = useState([]);
 
+  function handleAddProduct(product) {
+    const productExist = cartItems.find(item => {
+      return item.id === product.id;
+    });
+
+    if (productExist) {
+      setCartItems(cartItems.map(item => {
+        return item.id === product.id ?
+          { ...productExist, quantity: productExist.quantity + 1 } :
+          item;
+      }))
+    }
+    else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  }
+
   return (
     <div>
       <BrowserRouter>
