@@ -58,6 +58,11 @@
     color: white;
     cursor: pointer;
 }
-.cart-items-add{
+
+.cart-items-add {
     background-color: red;
+}
+
+.cart-items-remove {
+    background-color: green;
 }
