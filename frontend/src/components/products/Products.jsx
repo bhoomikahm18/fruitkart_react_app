@@ -22,6 +22,14 @@ function Products(props) {
     setProducts(sorted);
   }
 
+  function sortAlphebetDecending() {
+    let productsCopy = [...products];
+    let sorted = productsCopy.sort((a, b) => {
+      return (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1;
+    });
+    setProducts(sorted);
+  }
+
   return ((products.flag) ?
     <div className='products-container'>
       <div className='products'>
