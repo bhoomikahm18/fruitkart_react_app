@@ -66,3 +66,7 @@
 .cart-items-remove {
     background-color: green;
 }
+
+.cart-items-add:active {
+    transform: translateY(1.2px);
+}
