@@ -70,3 +70,12 @@
 .cart-items-add:active {
     transform: translateY(1.2px);
 }
+.cart-items-total-price-name{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 22%;
+    font-size: 20px;
+    font-weight: 700;
+    border-top: 2px solid black;
+}
