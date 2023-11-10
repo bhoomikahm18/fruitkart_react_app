@@ -46,6 +46,10 @@ function App() {
     }
   }
 
+  function handleCartClearence() {
+    setCartItems([]);
+  }
+
   return (
     <div>
       <BrowserRouter>
