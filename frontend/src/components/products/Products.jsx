@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Products.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Products(props) {
   const [products, setProducts] = useState({ flag: false, productsList: null });
@@ -15,33 +17,49 @@ function Products(props) {
   useEffect(() => { getData() }, []);
 
   function sortAlphebetAcending() {
-    let productsCopy = [...products];
+    let productsCopy = [...products.productsList];
     let sorted = productsCopy.sort((a, b) => {
       return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
     });
-    setProducts(sorted);
+    setProducts({ flag: true, productsList: sorted });
   }
 
   function sortAlphebetDecending() {
-    let productsCopy = [...products];
+    let productsCopy = [...products.productsList];
     let sorted = productsCopy.sort((a, b) => {
       return (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1;
     });
-    setProducts(sorted);
+    setProducts({ flag: true, productsList: sorted });
   }
 
   function sortPriceAcending() {
-    let productsCopy = [...products];
-    setProducts(productsCopy.sort((a, b) => a.price - b.price));
+    let productsCopy = [...products.productsList];
+    let sorted = productsCopy.sort((a, b) => a.price - b.price);
+    setProducts({ flag: true, productsList: sorted });
   }
 
   function sortPriceDecending() {
-    let productsCopy = [...products];
-    setProducts(productsCopy.sort((a, b) => b.price - a.price));
+    let productsCopy = [...products.productsList];
+    let sorted = productsCopy.sort((a, b) => b.price - a.price);
+    setProducts({ flag: true, productsList: sorted });
   }
 
   return ((products.flag) ?
     <div className='products-container'>
+      <div className="sort-button">
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id='drowpdown-basic'>
+            Sort By
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1" onClick={sortAlphebetAcending}>A -to- Z</Dropdown.Item>
+            <Dropdown.Item href="#/action-2" onClick={sortAlphebetDecending}>Z -to- A</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item href="#/action-3" onClick={sortPriceDecending}>High to Low</Dropdown.Item>
+            <Dropdown.Item href="#/action-4" onClick={sortPriceAcending}>Low to High</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
       <div className='products'>
         {products.productsList.map(item => {
           return (
