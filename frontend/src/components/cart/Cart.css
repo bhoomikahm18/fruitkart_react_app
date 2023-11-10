@@ -40,3 +40,7 @@
     font-weight: 700;
     margin-left: 5%;
 }
+.cart-items-name, 
+.cart-items-function{
+    width: 25%;
+}
