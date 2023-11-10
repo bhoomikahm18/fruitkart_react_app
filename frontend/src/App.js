@@ -57,7 +57,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Products handleAddProduct={handleAddProduct} />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route exact path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
         </Routes>
       </BrowserRouter>
     </div>
